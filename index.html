@@ -79,7 +79,113 @@
     color:var(--text-dim);
     transition:color .25s;
   }
-  .nav-links a:hover, .nav-links a:focus-visible{color:var(--gold);}
+  .nav-links a:hover, .nav-links a:focus-visible{color:#ffffff;}
+
+  /* ---------- GALERIA ---------- */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1.2rem;
+  }
+  .gallery-item{
+    position:relative;
+    border-radius:6px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--panel);
+  }
+  .gallery-item img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    object-position:center 12%;
+    display:block;
+    filter:grayscale(.1) contrast(1.05);
+    transition:transform .5s ease;
+  }
+  .gallery-item:hover img{transform:scale(1.06);}
+  .gallery-caption{
+    position:absolute;
+    left:0;right:0;bottom:0;
+    padding:1rem 1.1rem .8rem;
+    background:linear-gradient(transparent, rgba(9,11,20,.92) 60%);
+  }
+  .gallery-caption .g-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:.95rem;
+    color:var(--text);
+  }
+  .gallery-caption .g-credit{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.65rem;
+    color:var(--text-dim);
+    margin-top:.2rem;
+  }
+  .gallery-caption .g-credit a{color:var(--text-dim); text-decoration:underline;}
+
+  /* ---------- STORY PHOTO ---------- */
+  .story-photo{
+    border-radius:6px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    margin-bottom:1.4rem;
+  }
+  .story-photo img{
+    width:100%;
+    display:block;
+    filter:grayscale(.15) contrast(1.05);
+  }
+  .story-photo figcaption{
+    padding:.6rem .9rem;
+    background:var(--panel);
+    font-family:'JetBrains Mono',monospace;
+    font-size:.65rem;
+    color:var(--text-dim);
+  }
+
+  /* ---------- CELEBRATION NOTE ---------- */
+  .celebration-note{
+    margin-top:3.5rem;
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:2rem;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .celebration-photo{
+    position:relative;
+    min-height:220px;
+    background:var(--bg-alt);
+  }
+  .celebration-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 15%;
+    display:block;
+    filter:grayscale(.1) contrast(1.05);
+  }
+  .celebration-text{
+    padding:1.8rem 1.8rem 1.8rem 0;
+  }
+  .celebration-text h3{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:1.2rem;
+    margin-bottom:.6rem;
+  }
+  .celebration-text p{
+    color:var(--text-dim);
+    font-size:.92rem;
+    line-height:1.6;
+  }
+  @media (max-width:700px){
+    .celebration-note{grid-template-columns:1fr;}
+    .celebration-photo{height:220px;}
+    .celebration-text{padding:1.5rem;}
+  }
   @media (max-width:700px){ .nav-links{display:none;} }
 
   /* ---------- HERO ---------- */
@@ -145,6 +251,25 @@
     border:1px solid var(--line);
     border-radius:100px;
     color:var(--text-dim);
+  }
+  .hero-avatar{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    overflow:hidden;
+    border:3px solid var(--gold);
+    margin-bottom:1.4rem;
+    background:var(--panel);
+  }
+  .hero-avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 15%;
+    display:block;
+  }
+  @media (max-width:820px){
+    .hero-avatar{margin-left:auto;margin-right:auto;}
   }
   @media (max-width:820px){
     .hero-grid{grid-template-columns:1fr;}
@@ -421,6 +546,7 @@
   <div class="nav-mark">10<span>·</span>YAMAL</div>
   <div class="nav-links">
     <a href="#ficha">Ficha</a>
+    <a href="#galeria">Galeria</a>
     <a href="#historia">História</a>
     <a href="#trajetoria">Trajetória</a>
     <a href="#numeros">Números</a>
@@ -461,6 +587,36 @@
   </div>
 </section>
 
+<section id="galeria">
+  <div class="section-head">
+    <h2 class="section-title">Galeria</h2>
+    <p class="section-note">Registros de Lamine Yamal pela seleção espanhola e pelo Barcelona, com fotos licenciadas para reuso livre.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lamine_Yamal_in_2025.jpg" alt="Lamine Yamal em 2025">
+      <div class="gallery-caption">
+        <div class="g-title">Lamine Yamal, 2025</div>
+        <div class="g-credit">Foto: Biser Todorov · <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lamine_Yamal_France_v_Spain_7.24.26-144.jpg" alt="Lamine Yamal na Copa do Mundo de 2026">
+      <div class="gallery-caption">
+        <div class="g-title">França x Espanha, Copa do Mundo 2026</div>
+        <div class="g-credit">Foto: Bryan Berlin · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Williams_and_Yamal_in_2025.jpg" alt="Lamine Yamal e Nico Williams em 2025">
+      <div class="gallery-caption">
+        <div class="g-title">Com Nico Williams, seleção espanhola</div>
+        <div class="g-credit">Foto via Wikimedia Commons</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="story" id="historia">
   <div class="section-head">
     <h2 class="section-title">De Rocafonda à camisa 10</h2>
@@ -468,6 +624,10 @@
   </div>
   <div class="story-layout">
     <div class="story-side">
+      <figure class="story-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lamine_Yamal_in_2025_(cropped).jpg" alt="Lamine Yamal em 2025">
+        <figcaption>Foto: Biser Todorov · CC BY 4.0</figcaption>
+      </figure>
       <p class="eyebrow">Raízes</p>
       <ul class="story-origin-list">
         <li>
